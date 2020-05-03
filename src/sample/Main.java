@@ -227,35 +227,35 @@ public class Main extends Application {
         ));
 
         t.getKeyFrames().add(new KeyFrame(
-                Duration.millis(1440),
+                Duration.millis(1550),
                 (ActionEvent actionEvent) -> {
                     collector.getChildren().setAll(collector18);
                 }
         ));
 
         t.getKeyFrames().add(new KeyFrame(
-                Duration.millis(1440),
+                Duration.millis(1660),
                 (ActionEvent actionEvent) -> {
                     collector.getChildren().setAll(collector19);
                 }
         ));
 
         t.getKeyFrames().add(new KeyFrame(
-                Duration.millis(1440),
+                Duration.millis(1770),
                 (ActionEvent actionEvent) -> {
                     collector.getChildren().setAll(collector20);
                 }
         ));
 
         t.getKeyFrames().add(new KeyFrame(
-                Duration.millis(1440),
+                Duration.millis(1880),
                 (ActionEvent actionEvent) -> {
                     collector.getChildren().setAll(collector21);
                 }
         ));
 
         t.getKeyFrames().add(new KeyFrame(
-                Duration.millis(1520),
+                Duration.millis(1990),
                 (ActionEvent actionEvent) -> {
                     collector.getChildren().setAll(collector22);
                 }
