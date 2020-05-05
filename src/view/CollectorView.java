@@ -43,7 +43,7 @@ public class CollectorView {
         return collector;
     }
 
-    public void collectorToView(){
+    public void collectorToView() {
 
         final ImageView collector1 = new ImageView(COLLECTOR_1);
         final ImageView collector2 = new ImageView(COLLECTOR_2);
@@ -73,163 +73,163 @@ public class CollectorView {
         collector = new Group(collector1);
 
         //Setting collector translate size
-            collector.setTranslateX(192);
-            collector.setTranslateY(192);
+        collector.setTranslateX(192);
+        collector.setTranslateY(192);
 
         //Animate images in loop
         Timeline t = new Timeline();
-            t.setCycleCount(Timeline.INDEFINITE);
+        t.setCycleCount(Timeline.INDEFINITE);
 
         //Images into timeline concept
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(90),
                 (
-        ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector2);
-        }
-            ));
+                        ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector2);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(180),
                 (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector3);
-        }
-            ));
+                    collector.getChildren().setAll(collector3);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(270),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector4);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector4);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(360),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector5);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector5);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(450),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector6);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector6);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(540),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector7);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector7);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(630),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector8);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector8);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(720),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector9);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector9);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(810),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector10);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector10);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(900),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector11);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector11);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(990),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector12);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector12);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(1080),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector13);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector13);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(1170),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector14);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector14);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(1260),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector15);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector15);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(1350),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector16);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector16);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(1440),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector17);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector17);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(1550),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector18);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector18);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(1660),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector19);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector19);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(1770),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector20);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector20);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(1880),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector21);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector21);
+                }
+        ));
 
-            t.getKeyFrames().add(new KeyFrame(
+        t.getKeyFrames().add(new KeyFrame(
                 Duration.millis(1990),
-                    (ActionEvent actionEvent) -> {
-            collector.getChildren().setAll(collector22);
-        }
-            ));
+                (ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector22);
+                }
+        ));
 
 
-            t.play();
+        t.play();
     }
 }

@@ -34,7 +34,7 @@ public class Main extends Application {
                     System.exit(0);
                 }
             });
-
+            primaryStage.setResizable(false);
         } catch (Exception e){
             e.printStackTrace();
         }
