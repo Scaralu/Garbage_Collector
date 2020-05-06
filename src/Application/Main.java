@@ -9,17 +9,14 @@ package Application;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import view.CollectorView;
 import view.ViewManager;
 
 import java.io.IOException;
 
 public class Main extends Application {
 
-    //Mounting scene
     public void start(Stage stage) throws IOException {
         try {
             ViewManager manager = new ViewManager();
@@ -39,19 +36,6 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
-//        Create movement from sprites
-//        CollectorView collector = new CollectorView();
-//        collector.collectorToView();
-
-//        set scene
-//        stage.setScene(new Scene(collector.getCollector(), 1100, 400));
-//        stage.setResizable(false);
-
-//        scene title
-//        stage.setTitle("Garbage Collector");
-
-//        show scene
-//        stage.show();
 
     public static void main(String[] args){
             Application.launch(args);

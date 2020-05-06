@@ -11,6 +11,7 @@ import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import model.GarbageCollectorButton;
 import model.GarbageCollectorSubscene;
+import model.InfoLabel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -36,6 +37,8 @@ public class ViewManager {
     private Scene scene;
     private Stage stage;
 
+
+
     public ViewManager() {
         menuButtons = new ArrayList<>();
         anchorPane = new AnchorPane();
@@ -58,11 +61,12 @@ public class ViewManager {
             sceneToHide.moveSubScene();
         }
         garbageCollectorSubscene.moveSubScene();
+        sceneToHide = garbageCollectorSubscene;
     }
 
     private void createSubScene(){
-        characterSubScene = new GarbageCollectorSubscene();
-        anchorPane.getChildren().add(characterSubScene);
+
+        createCollectorChosenSubScene();
 
         creditSubScene = new GarbageCollectorSubscene();
         anchorPane.getChildren().add(creditSubScene);
@@ -74,6 +78,18 @@ public class ViewManager {
         anchorPane.getChildren().add(helpSubScene);
     }
 
+
+    private void createCollectorChosenSubScene(){
+        characterSubScene = new GarbageCollectorSubscene();
+        anchorPane.getChildren().add(characterSubScene);
+
+        InfoLabel chooseCollectorLabel = new InfoLabel("Choose your collector");
+        chooseCollectorLabel.setLayoutX(200);
+        chooseCollectorLabel.setLayoutY(0);
+
+        characterSubScene.getPane().getChildren().add(chooseCollectorLabel);
+
+    }
 
     private void addMenuButton(GarbageCollectorButton garbageCollectorButton) {
         garbageCollectorButton.setLayoutX(MENU_BUTTONS_START_X);
@@ -96,7 +112,7 @@ public class ViewManager {
         startButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                characterSubScene.moveSubScene();
+                showSubScene(characterSubScene);
             }
         });
     }
@@ -108,7 +124,7 @@ public class ViewManager {
         scoreButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                scoreSubScene.moveSubScene();
+                showSubScene(scoreSubScene);
             }
         });
     }
@@ -120,7 +136,7 @@ public class ViewManager {
         helpButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                helpSubScene.moveSubScene();
+                showSubScene(helpSubScene);
             }
         });
     }
@@ -132,7 +148,7 @@ public class ViewManager {
         creditsButton.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent actionEvent) {
-                creditSubScene.moveSubScene();
+                showSubScene(creditSubScene);
             }
         });
     }
@@ -140,6 +156,13 @@ public class ViewManager {
     private void createExitButton() {
         GarbageCollectorButton exitButton = new GarbageCollectorButton("EXIT");
         addMenuButton(exitButton);
+
+        exitButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                stage.close();
+            }
+        });
     }
 
 

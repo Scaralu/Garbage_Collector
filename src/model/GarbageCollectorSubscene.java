@@ -13,6 +13,10 @@ public class GarbageCollectorSubscene extends SubScene {
 
     private boolean isHidden;
 
+    public boolean isHidden() {
+        return isHidden;
+    }
+
     public GarbageCollectorSubscene(){
         super(new AnchorPane(), 900, 600);
         prefWidth(1000);
@@ -47,5 +51,9 @@ public class GarbageCollectorSubscene extends SubScene {
         }
 
         transition.play();
+    }
+
+    public AnchorPane getPane(){
+        return (AnchorPane) this.getRoot();
     }
 }
