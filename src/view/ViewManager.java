@@ -1,5 +1,6 @@
 package view;
 
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.effect.DropShadow;
@@ -9,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import model.GarbageCollectorButton;
+import model.GarbageCollectorSubscene;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,12 @@ public class ViewManager {
 
     List<GarbageCollectorButton> menuButtons;
 
+    private GarbageCollectorSubscene sceneToHide;
+    private GarbageCollectorSubscene characterSubScene;
+    private GarbageCollectorSubscene scoreSubScene;
+    private GarbageCollectorSubscene helpSubScene;
+    private GarbageCollectorSubscene creditSubScene;
+
     private AnchorPane anchorPane;
     private Scene scene;
     private Stage stage;
@@ -35,6 +43,7 @@ public class ViewManager {
         //Stage inicialization to prevent from NullPointerException
         stage = new Stage();
         stage.setScene(scene);
+        createSubScene();
         createButton();
         createBackground();
         createLogo();
@@ -43,6 +52,28 @@ public class ViewManager {
     public Stage getStage() {
         return stage;
     }
+
+    private void showSubScene(GarbageCollectorSubscene garbageCollectorSubscene){
+        if (sceneToHide != null){
+            sceneToHide.moveSubScene();
+        }
+        garbageCollectorSubscene.moveSubScene();
+    }
+
+    private void createSubScene(){
+        characterSubScene = new GarbageCollectorSubscene();
+        anchorPane.getChildren().add(characterSubScene);
+
+        creditSubScene = new GarbageCollectorSubscene();
+        anchorPane.getChildren().add(creditSubScene);
+
+        scoreSubScene = new GarbageCollectorSubscene();
+        anchorPane.getChildren().add(scoreSubScene);
+
+        helpSubScene = new GarbageCollectorSubscene();
+        anchorPane.getChildren().add(helpSubScene);
+    }
+
 
     private void addMenuButton(GarbageCollectorButton garbageCollectorButton) {
         garbageCollectorButton.setLayoutX(MENU_BUTTONS_START_X);
@@ -62,27 +93,55 @@ public class ViewManager {
     private void createStartButton() {
         GarbageCollectorButton startButton = new GarbageCollectorButton("PLAY");
         addMenuButton(startButton);
+        startButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                characterSubScene.moveSubScene();
+            }
+        });
     }
 
     private void createScoresButton() {
         GarbageCollectorButton scoreButton = new GarbageCollectorButton("SCORE");
         addMenuButton(scoreButton);
+
+        scoreButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                scoreSubScene.moveSubScene();
+            }
+        });
     }
 
     private void createHelpButton() {
         GarbageCollectorButton helpButton = new GarbageCollectorButton("HELP");
         addMenuButton(helpButton);
+
+        helpButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                helpSubScene.moveSubScene();
+            }
+        });
     }
 
     private void createCreditsButtons() {
         GarbageCollectorButton creditsButton = new GarbageCollectorButton("CREDITS");
         addMenuButton(creditsButton);
+
+        creditsButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                creditSubScene.moveSubScene();
+            }
+        });
     }
 
     private void createExitButton() {
         GarbageCollectorButton exitButton = new GarbageCollectorButton("EXIT");
         addMenuButton(exitButton);
     }
+
 
     private void createBackground() {
         Image backgroundImage = new Image("view/resource/garbageCollectorBg.jpg", 1280, 720, false, true);

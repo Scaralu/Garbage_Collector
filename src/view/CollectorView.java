@@ -11,30 +11,30 @@ import javafx.util.Duration;
 public class CollectorView {
 
     //Loading Images from folder /model.resources/sprint
-    final static javafx.scene.image.Image COLLECTOR_1 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_sprint/sprint01.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_2 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_sprint/sprint02.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_3 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_sprint/sprint03.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_4 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_sprint/sprint04.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_5 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_sprint/sprint05.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_6 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_sprint/sprint06.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_7 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_sprint/sprint07.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_8 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_sprint/sprint08.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_9 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_sprint/sprint09.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_10 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_sprint/sprint10.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_1 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_sprint/sprint01.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_2 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_sprint/sprint02.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_3 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_sprint/sprint03.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_4 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_sprint/sprint04.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_5 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_sprint/sprint05.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_6 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_sprint/sprint06.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_7 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_sprint/sprint07.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_8 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_sprint/sprint08.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_9 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_sprint/sprint09.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_10 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_sprint/sprint10.png").toString());
 
     //Jump action
-    final static javafx.scene.image.Image COLLECTOR_11 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_jump/land0003.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_12 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_jump/rising0001.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_13 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_jump/rising0002.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_14 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_jump/rising0003.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_15 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_jump/hoverf0001.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_16 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_jump/hoverf0002.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_17 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_jump/hoverf0003.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_18 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_jump/fallf0001.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_19 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_jump/fallf0002.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_20 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_jump/heavyland0003.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_21 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_jump/heavyland0001.png").toString());
-    final static javafx.scene.image.Image COLLECTOR_22 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/g_jump/crouch0001.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_11 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_jump/land0003.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_12 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_jump/rising0001.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_13 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_jump/rising0002.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_14 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_jump/rising0003.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_15 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_jump/hoverf0001.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_16 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_jump/hoverf0002.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_17 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_jump/hoverf0003.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_18 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_jump/fallf0001.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_19 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_jump/fallf0002.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_20 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_jump/heavyland0003.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_21 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_jump/heavyland0001.png").toString());
+    final static javafx.scene.image.Image COLLECTOR_22 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/g_jump/crouch0001.png").toString());
 
     //Creating group node
     private Group collector;

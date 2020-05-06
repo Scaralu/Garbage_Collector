@@ -12,9 +12,9 @@ import java.io.FileNotFoundException;
 
 public class GarbageCollectorButton extends Button {
 
-    private final String FONT_PATH = "src/model/resources/extra/font/kenvector_future.ttf";
-    private final String BUTTON_PRESSED_YELLOW = "-fx-background-color: transparent; -fx-background-image: url('/model/resources/extra/png/yellow_button01.png')";
-    private final String BUTTON_UNPRESSED_YELLOW = "-fx-background-color: transparent; -fx-background-image: url('/model/resources/extra/png/yellow_button00.png')";
+    private final String FONT_PATH = "src/model/resources/ui/font/kenvector_future.ttf";
+    private final String BUTTON_PRESSED_YELLOW = "-fx-background-color: transparent; -fx-background-image: url('/model/resources/ui/png/yellow_button01.png')";
+    private final String BUTTON_UNPRESSED_YELLOW = "-fx-background-color: transparent; -fx-background-image: url('/model/resources/ui/png/yellow_button00.png')";
 
     public GarbageCollectorButton(String text) {
         setText(text);
