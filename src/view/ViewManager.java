@@ -96,10 +96,11 @@ public class ViewManager {
 
     private HBox createCollectorChoose(){
         HBox hBox = new HBox();
-        hBox.setSpacing(20);
+        hBox.setSpacing(100);
         collectorPickers = new ArrayList<>();
-        for (Collector collector : Collector.values()){
-            CollectorPicker collectorToPick = new CollectorPicker(collector);
+        for (Collector c : Collector.values()){
+            CollectorPicker collectorToPick = new CollectorPicker(c);
+            collectorPickers.add(collectorToPick);
             hBox.getChildren().add(collectorToPick);
             collectorToPick.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
@@ -113,7 +114,7 @@ public class ViewManager {
             });
         }
         hBox.setLayoutX(300 - (118*2));
-        hBox.setLayoutY(100);
+        hBox.setLayoutY(150);
         return hBox;
     }
 

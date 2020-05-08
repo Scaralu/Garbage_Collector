@@ -56,7 +56,7 @@ public class CollectorModel {
         return collector;
     }
 
-    public void collectorIdle() {
+    public void collectorIdleDefault() {
         final ImageView collector_idle_01 = new ImageView(COLLECTOR_IDLE_01);
         final ImageView collector_idle_02 = new ImageView(COLLECTOR_IDLE_02);
         final ImageView collector_idle_03 = new ImageView(COLLECTOR_IDLE_03);
@@ -340,4 +340,146 @@ public class CollectorModel {
 
         t.play();
     }
+
+
+
+
+    final static javafx.scene.image.Image BLUE_COLLECTOR_1 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_sprint/sprint01.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_2 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_sprint/sprint02.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_3 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_sprint/sprint03.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_4 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_sprint/sprint04.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_5 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_sprint/sprint05.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_6 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_sprint/sprint06.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_7 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_sprint/sprint07.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_8 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_sprint/sprint08.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_9 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_sprint/sprint09.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_10 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_sprint/sprint10.png").toString());
+
+    //Jump action
+    final static javafx.scene.image.Image BLUE_COLLECTOR_11 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_jump/land0003.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_12 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_jump/rising0001.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_13 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_jump/rising0002.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_14 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_jump/rising0003.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_15 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_jump/hoverf0001.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_16 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_jump/hoverf0002.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_17 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_jump/hoverf0003.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_18 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_jump/fallf0001.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_19 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_jump/fallf0002.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_20 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_jump/heavyland0003.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_21 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_jump/heavyland0001.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_22 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_jump/crouch0001.png").toString());
+
+    //Idle action
+    final static javafx.scene.image.Image BLUE_COLLECTOR_IDLE_01 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_idle/idle0001.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_IDLE_02 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_idle/idle0002.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_IDLE_03 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_idle/idle0003.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_IDLE_04 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_idle/idle0004.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_IDLE_05 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_idle/idle0005.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_IDLE_06 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_idle/idle0006.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_IDLE_07 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_idle/idle0007.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_IDLE_08 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_idle/idle0008.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_IDLE_09 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_idle/idle0009.png").toString());
+    final static javafx.scene.image.Image BLUE_COLLECTOR_IDLE_10 = new javafx.scene.image.Image(Main.class.getResource("/model/resources/character/blue_trash_king/g_idle/idle0010.png").toString());
+
+
+    public void collectorIdleBlue() {
+        final ImageView collector_idle_01 = new ImageView(COLLECTOR_IDLE_01);
+        final ImageView collector_idle_02 = new ImageView(COLLECTOR_IDLE_02);
+        final ImageView collector_idle_03 = new ImageView(COLLECTOR_IDLE_03);
+        final ImageView collector_idle_04 = new ImageView(COLLECTOR_IDLE_04);
+        final ImageView collector_idle_05 = new ImageView(COLLECTOR_IDLE_05);
+        final ImageView collector_idle_06 = new ImageView(COLLECTOR_IDLE_06);
+        final ImageView collector_idle_07 = new ImageView(COLLECTOR_IDLE_07);
+        final ImageView collector_idle_08 = new ImageView(COLLECTOR_IDLE_08);
+        final ImageView collector_idle_09 = new ImageView(COLLECTOR_IDLE_09);
+        final ImageView collector_idle_10 = new ImageView(COLLECTOR_IDLE_10);
+
+        collectorIdle = new Group(collector_idle_01);
+
+        collector_idle_01.setTranslateX(100);
+        collector_idle_01.setTranslateY(100);
+
+        Timeline t = new Timeline();
+        t.setCycleCount(Timeline.INDEFINITE);
+
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(90),
+                (
+                        ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector_idle_02);
+                }
+        ));
+
+
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(180),
+                (
+                        ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector_idle_03);
+                }
+        ));
+
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(270),
+                (
+                        ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector_idle_04);
+                }
+        ));
+
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(360),
+                (
+                        ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector_idle_05);
+                }
+        ));
+
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(450),
+                (
+                        ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector_idle_06);
+                }
+        ));
+
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(540),
+                (
+                        ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector_idle_07);
+                }
+        ));
+
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(630),
+                (
+                        ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector_idle_08);
+                }
+        ));
+
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(720),
+                (
+                        ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector_idle_09);
+                }
+        ));
+
+        t.getKeyFrames().add(new KeyFrame(
+                Duration.millis(810),
+                (
+                        ActionEvent actionEvent) -> {
+                    collector.getChildren().setAll(collector_idle_10);
+                }
+        ));
+
+        t.play();
+    }
+
+
+
+
+
 }

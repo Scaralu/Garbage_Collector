@@ -1,8 +1,9 @@
 package model;
 
 public enum Collector {
-    PINK_TRASH_KING("src/model/resources/character/trash_king/g_idle/idle0005.png"),
-    TRASH_KING("src/model/resources/character/trash_king/g_idle/idle0001.png");
+    MEAT_BOY("model/resources/character/blue_trash_king/g_idle/idle0001.png"),
+    BLUE_TRASH_KING("model/resources/character/blue_trash_king/g_idle/idle0001.png"),
+    TRASH_KING("model/resources/character/blue_trash_king/g_idle/idle0001.png");
 
 
     String urlCollector;
