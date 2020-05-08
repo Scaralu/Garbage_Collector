@@ -12,8 +12,8 @@ public class CollectorPicker extends VBox {
     private ImageView circleImage;
     private ImageView collectorImage;
 
-    private String circleNotChoosen = "src/model/resources/ui/png/grey_circle.png";
-    private String circleChoosen = "src/model/resources/ui/png/yellow_boxTick.png";
+    private String circleNotChoosen = "model/resources/ui/png/grey_circle.png";
+    private String circleChoosen = "model/resources/ui/png/yellow_boxTick.png";
 
     private Collector collector;
     private boolean isCircleChoosen;
@@ -42,6 +42,5 @@ public class CollectorPicker extends VBox {
         this.isCircleChoosen = isCircleChoosen;
         String imageToSet = this.isCircleChoosen ? circleChoosen : circleNotChoosen;
         circleImage.setImage(new Image(imageToSet));
-
     }
 }

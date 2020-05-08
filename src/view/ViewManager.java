@@ -8,10 +8,9 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
+import javafx.scene.shape.Box;
 import javafx.stage.Stage;
-import model.GarbageCollectorButton;
-import model.GarbageCollectorSubscene;
-import model.InfoLabel;
+import model.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +25,9 @@ public class ViewManager {
     private static final int MENU_BUTTONS_START_Y = 200;
 
     List<GarbageCollectorButton> menuButtons;
+    List<CollectorPicker> collectorPickers;
+
+    private Collector collectorChosen;
 
     private GarbageCollectorSubscene sceneToHide;
     private GarbageCollectorSubscene characterSubScene;
@@ -88,7 +90,31 @@ public class ViewManager {
         chooseCollectorLabel.setLayoutY(0);
 
         characterSubScene.getPane().getChildren().add(chooseCollectorLabel);
+        characterSubScene.getPane().getChildren().add(createCollectorChoose());
 
+    }
+
+    private HBox createCollectorChoose(){
+        HBox hBox = new HBox();
+        hBox.setSpacing(20);
+        collectorPickers = new ArrayList<>();
+        for (Collector collector : Collector.values()){
+            CollectorPicker collectorToPick = new CollectorPicker(collector);
+            hBox.getChildren().add(collectorToPick);
+            collectorToPick.setOnMouseClicked(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent mouseEvent) {
+                    for (CollectorPicker c : collectorPickers){
+                        c.setCircleChoosen(false);
+                    }
+                    collectorToPick.setCircleChoosen(true);
+                    collectorChosen = collectorToPick.getCollector();
+                }
+            });
+        }
+        hBox.setLayoutX(300 - (118*2));
+        hBox.setLayoutY(100);
+        return hBox;
     }
 
     private void addMenuButton(GarbageCollectorButton garbageCollectorButton) {
