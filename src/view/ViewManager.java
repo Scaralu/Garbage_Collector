@@ -8,7 +8,6 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
-import javafx.scene.shape.Box;
 import javafx.stage.Stage;
 import model.*;
 
@@ -38,8 +37,6 @@ public class ViewManager {
     private AnchorPane anchorPane;
     private Scene scene;
     private Stage stage;
-
-
 
     public ViewManager() {
         menuButtons = new ArrayList<>();
@@ -91,6 +88,7 @@ public class ViewManager {
 
         characterSubScene.getPane().getChildren().add(chooseCollectorLabel);
         characterSubScene.getPane().getChildren().add(createCollectorChoose());
+        characterSubScene.getPane().getChildren().add(createButtonToStart());
 
     }
 
@@ -98,15 +96,15 @@ public class ViewManager {
         HBox hBox = new HBox();
         hBox.setSpacing(100);
         collectorPickers = new ArrayList<>();
-        for (Collector c : Collector.values()){
-            CollectorPicker collectorToPick = new CollectorPicker(c);
+        for (Collector collector_in : Collector.values()){
+            CollectorPicker collectorToPick = new CollectorPicker(collector_in);
             collectorPickers.add(collectorToPick);
             hBox.getChildren().add(collectorToPick);
             collectorToPick.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
-                    for (CollectorPicker c : collectorPickers){
-                        c.setCircleChoosen(false);
+                    for (CollectorPicker collectorPicker : collectorPickers){
+                        collectorPicker.setCircleChoosen(false);
                     }
                     collectorToPick.setCircleChoosen(true);
                     collectorChosen = collectorToPick.getCollector();
@@ -116,6 +114,24 @@ public class ViewManager {
         hBox.setLayoutX(300 - (118*2));
         hBox.setLayoutY(150);
         return hBox;
+    }
+
+    private GarbageCollectorButton createButtonToStart(){
+        GarbageCollectorButton startButton = new GarbageCollectorButton("Start");
+        startButton.setLayoutX(200);
+        startButton.setLayoutY(500);
+
+        startButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent actionEvent) {
+                if (collectorChosen != null){
+                    GameViewManager gameViewManager = new GameViewManager();
+                    gameViewManager.createNewGame(stage, collectorChosen);
+                }
+            }
+        });
+
+        return startButton;
     }
 
     private void addMenuButton(GarbageCollectorButton garbageCollectorButton) {

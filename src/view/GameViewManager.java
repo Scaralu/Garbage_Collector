@@ -8,10 +8,16 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import model.Collector;
 
+import javax.swing.text.html.ImageView;
+
 public class GameViewManager {
     private AnchorPane anchorPane;
     private Stage stage;
     private Scene gameScene;
+
+    private Stage menuStage;
+    private ImageView collector;
+     
 
     private static final int GAME_WIDTH = 1280;
     private static final int GAME_HEIGHT = 720;
@@ -54,8 +60,10 @@ public class GameViewManager {
         });
     }
 
-    private void createNewGame(Stage stage, Collector collector){
-
+    public void createNewGame(Stage stage, Collector collector){
+        this.menuStage = stage;
+        this.menuStage.hide();
+        this.stage.show();
     }
 
 }

@@ -19,6 +19,7 @@ public class CollectorPicker extends VBox {
     private boolean isCircleChoosen;
 
     public CollectorPicker(Collector collector){
+        setCollector(collector);
         circleImage = new ImageView(circleNotChoosen);
         collectorImage = new ImageView(collector.getUrlCollector());
 
@@ -28,6 +29,10 @@ public class CollectorPicker extends VBox {
         this.setSpacing(20);
         this.getChildren().add(circleImage);
         this.getChildren().add(collectorImage);
+    }
+
+    public void setCollector(Collector collector) {
+        this.collector = collector;
     }
 
     public Collector getCollector() {
