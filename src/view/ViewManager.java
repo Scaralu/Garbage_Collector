@@ -10,6 +10,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import javafx.stage.Stage;
 import model.*;
+import model.characters.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,8 +26,7 @@ public class ViewManager {
 
     List<GarbageCollectorButton> menuButtons;
     List<CollectorPicker> collectorPickers;
-
-    private Collector collectorChosen;
+    List<Collector> collectors;
 
     private GarbageCollectorSubscene sceneToHide;
     private GarbageCollectorSubscene characterSubScene;
@@ -38,11 +38,11 @@ public class ViewManager {
     private Scene scene;
     private Stage stage;
 
+
     public ViewManager() {
         menuButtons = new ArrayList<>();
         anchorPane = new AnchorPane();
         scene = new Scene(anchorPane, width, height);
-        //Stage inicialization to prevent from NullPointerException
         stage = new Stage();
         stage.setScene(scene);
         createSubScene();
@@ -95,19 +95,27 @@ public class ViewManager {
     private HBox createCollectorChoose(){
         HBox hBox = new HBox();
         hBox.setSpacing(100);
+        
+        collectors = new ArrayList<>();
+        collectors.add(new MeatBoy(150, 152));
+        collectors.add(new TrashKing(192, 192));
+        collectors.add(new BlueTrashKing(192, 192));
+
+
         collectorPickers = new ArrayList<>();
-        for (Collector collector_in : Collector.values()){
-            CollectorPicker collectorToPick = new CollectorPicker(collector_in);
+
+        for (Collector collector : collectors){
+            CollectorPicker collectorToPick = new CollectorPicker(collector);
             collectorPickers.add(collectorToPick);
             hBox.getChildren().add(collectorToPick);
+
             collectorToPick.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
                     for (CollectorPicker collectorPicker : collectorPickers){
-                        collectorPicker.setCircleChoosen(false);
+                        collectorPicker.setCircleChoosen(false, collectorPicker.getCollector());
                     }
-                    collectorToPick.setCircleChoosen(true);
-                    collectorChosen = collectorToPick.getCollector();
+                    collectorToPick.setCircleChoosen(true, collector);
                 }
             });
         }
@@ -120,16 +128,6 @@ public class ViewManager {
         GarbageCollectorButton startButton = new GarbageCollectorButton("Start");
         startButton.setLayoutX(200);
         startButton.setLayoutY(500);
-
-        startButton.setOnAction(new EventHandler<ActionEvent>() {
-            @Override
-            public void handle(ActionEvent actionEvent) {
-                if (collectorChosen != null){
-                    GameViewManager gameViewManager = new GameViewManager();
-                    gameViewManager.createNewGame(stage, collectorChosen);
-                }
-            }
-        });
 
         return startButton;
     }

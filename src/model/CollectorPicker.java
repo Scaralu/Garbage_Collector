@@ -4,7 +4,8 @@ import javafx.geometry.Pos;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.VBox;
-
+import model.characters.Collector;
+import model.characters.CollectorModel;
 
 
 public class CollectorPicker extends VBox {
@@ -16,36 +17,39 @@ public class CollectorPicker extends VBox {
     private String circleChoosen = "model/resources/ui/png/yellow_boxTick.png";
 
     private Collector collector;
+    private CollectorModel collectorModel;
     private boolean isCircleChoosen;
 
-    public CollectorPicker(Collector collector){
-        setCollector(collector);
-        circleImage = new ImageView(circleNotChoosen);
-        collectorImage = new ImageView(collector.getUrlCollector());
-
-        isCircleChoosen = false;
-
-        this.setAlignment(Pos.CENTER);
-        this.setSpacing(20);
-        this.getChildren().add(circleImage);
-        this.getChildren().add(collectorImage);
+    public Collector getCollector() {
+        return collector;
     }
 
     public void setCollector(Collector collector) {
         this.collector = collector;
     }
 
-    public Collector getCollector() {
-        return collector;
+    public CollectorPicker(Collector collector){
+        setCollector(collector);
+        collectorImage = new ImageView(collector.getStaticCharacterImage());
+        isCircleChoosen = false;
+        circleImage = new ImageView(circleNotChoosen);
+        this.setAlignment(Pos.CENTER);
+        this.setSpacing(20);
+        this.getChildren().add(circleImage);
+        this.getChildren().add(collectorImage);
     }
 
     public boolean isCircleChoosen() {
         return isCircleChoosen;
     }
 
-    public void setCircleChoosen(boolean isCircleChoosen) {
+    public void setCircleChoosen(boolean isCircleChoosen, Collector collector) {
         this.isCircleChoosen = isCircleChoosen;
         String imageToSet = this.isCircleChoosen ? circleChoosen : circleNotChoosen;
         circleImage.setImage(new Image(imageToSet));
+        collectorModel.idleEvent(collector, 192, 192, isCircleChoosen);
+        if (isCircleChoosen){
+            collectorImage.setImage(null);
+        }
     }
 }
