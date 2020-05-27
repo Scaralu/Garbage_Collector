@@ -1,11 +1,29 @@
 package model.characters;
 
+import Application.Main;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
+import javafx.event.ActionEvent;
+import javafx.scene.Group;
+import javafx.scene.image.ImageView;
+import javafx.util.Duration;
+
 public abstract class Collector {
 
     private Integer height;
     private Integer width;
     private String imageUrlPath;
     private String staticCharacterImage;
+    private String sprintSpriteSheet;
+    private String jumpSpriteSheet;
+
+    public String getJumpSpriteSheet() {
+        return jumpSpriteSheet;
+    }
+
+    public String getSprintSpriteSheet() {
+        return sprintSpriteSheet;
+    }
 
     public String getStaticCharacterImage() {
         return staticCharacterImage;

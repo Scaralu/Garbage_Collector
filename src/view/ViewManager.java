@@ -34,10 +34,12 @@ public class ViewManager {
     private GarbageCollectorSubscene helpSubScene;
     private GarbageCollectorSubscene creditSubScene;
 
+    private GameViewManager gameViewManager = new GameViewManager();
     private AnchorPane anchorPane;
     private Scene scene;
     private Stage stage;
 
+    public Collector choosenCollector;
 
     public ViewManager() {
         menuButtons = new ArrayList<>();
@@ -45,6 +47,7 @@ public class ViewManager {
         scene = new Scene(anchorPane, width, height);
         stage = new Stage();
         stage.setScene(scene);
+        stage.setTitle("Garbage Collector");
         createSubScene();
         createButton();
         createBackground();
@@ -82,40 +85,37 @@ public class ViewManager {
         characterSubScene = new GarbageCollectorSubscene();
         anchorPane.getChildren().add(characterSubScene);
 
-        InfoLabel chooseCollectorLabel = new InfoLabel("Choose your collector");
-        chooseCollectorLabel.setLayoutX(200);
+        InfoLabel chooseCollectorLabel = new InfoLabel("CHOOSE YOUR COLLECTOR");
+        chooseCollectorLabel.setLayoutX(230);
         chooseCollectorLabel.setLayoutY(0);
 
         characterSubScene.getPane().getChildren().add(chooseCollectorLabel);
-        characterSubScene.getPane().getChildren().add(createCollectorChoose());
+        characterSubScene.getPane().getChildren().add(createCollectorToChoose());
         characterSubScene.getPane().getChildren().add(createButtonToStart());
 
     }
 
-    private HBox createCollectorChoose(){
+    private HBox createCollectorToChoose(){
         HBox hBox = new HBox();
-        hBox.setSpacing(100);
-        
+        hBox.setSpacing(400);
+
         collectors = new ArrayList<>();
-        collectors.add(new MeatBoy(150, 152));
         collectors.add(new TrashKing(192, 192));
         collectors.add(new BlueTrashKing(192, 192));
 
-
         collectorPickers = new ArrayList<>();
-
         for (Collector collector : collectors){
             CollectorPicker collectorToPick = new CollectorPicker(collector);
             collectorPickers.add(collectorToPick);
             hBox.getChildren().add(collectorToPick);
-
             collectorToPick.setOnMouseClicked(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
                     for (CollectorPicker collectorPicker : collectorPickers){
-                        collectorPicker.setCircleChoosen(false, collectorPicker.getCollector());
+                        collectorPicker.setCircleChoosen(false);
                     }
-                    collectorToPick.setCircleChoosen(true, collector);
+                    collectorToPick.setCircleChoosen(true);
+                    choosenCollector = collectorToPick.getCollector();
                 }
             });
         }
@@ -126,8 +126,15 @@ public class ViewManager {
 
     private GarbageCollectorButton createButtonToStart(){
         GarbageCollectorButton startButton = new GarbageCollectorButton("Start");
-        startButton.setLayoutX(200);
+        startButton.setLayoutX(350);
         startButton.setLayoutY(500);
+
+        startButton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                gameViewManager.createNewGame(stage, choosenCollector);
+            }
+        });
 
         return startButton;
     }
@@ -208,7 +215,7 @@ public class ViewManager {
 
 
     private void createBackground() {
-        Image backgroundImage = new Image("view/resource/garbageCollectorBg.jpg", 1280, 720, false, true);
+        Image backgroundImage = new Image("view/resource/menuImage.png", 1300, 740, false, true);
         BackgroundImage background = new BackgroundImage(backgroundImage, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, null);
         anchorPane.setBackground(new Background(background));
     }

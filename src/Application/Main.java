@@ -6,6 +6,7 @@
 //TODO: Pontos de score e obstáculos
 package Application;
 
+import com.sun.java.swing.plaf.windows.WindowsInternalFrameTitlePane;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.event.EventHandler;
@@ -16,7 +17,6 @@ import view.ViewManager;
 import java.io.IOException;
 
 public class Main extends Application {
-
     public void start(Stage stage) throws IOException {
         try {
             ViewManager manager = new ViewManager();

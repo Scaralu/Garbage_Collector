@@ -22,7 +22,8 @@ public class GarbageCollectorSubscene extends SubScene {
         prefWidth(1000);
         prefHeight(500);
 
-        BackgroundImage backgroundImage = new BackgroundImage(new Image(PANEL_IMAGE, 900, 600, false, true),
+        BackgroundImage backgroundImage = new BackgroundImage(
+                new Image(PANEL_IMAGE, 900, 600, false, true),
                 BackgroundRepeat.NO_REPEAT,  BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT, null);
 
         AnchorPane anchorPane = (AnchorPane) this.getRoot();
